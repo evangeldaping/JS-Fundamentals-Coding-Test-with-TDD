@@ -23,3 +23,17 @@ export const commaSum = (arrString) => {
 };
 
 console.log(commaSum(arrString));
+
+// Using map
+export const commaAdd = (arrString) => {
+	//Code here
+	const arrayOfStrings = arrString.split(",");
+	const newArrays = arrayOfStrings.map(numString => Number(numString));
+	console.log(newArrays);
+	const total = newArrays.reduce((acc, curr) => {
+		return (acc += curr);
+	}, 0);
+	return total;
+};
+
+console.log(commaAdd(arrString));
