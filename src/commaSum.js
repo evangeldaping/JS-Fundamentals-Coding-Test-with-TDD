@@ -6,9 +6,20 @@
 
 const arrString = "1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9";
 
+// Using for loop
 export const commaSum = (arrString) => {
 	//Code here
-	return 0;
+	const numStrings = arrString.split(',');
+	const newArrays = [];
+	for( let i = 0; i < numStrings.length; i++) {
+		newArrays.push(parseFloat(numStrings[i]))		
+	}
+
+	let total = 0;
+	for (let i = 0; i < newArrays.length; i++) {
+		total += newArrays[i];
+	}
+	return total;
 };
 
 console.log(commaSum(arrString));
