@@ -24,7 +24,7 @@ export const commaSum = (arrString) => {
 
 console.log(commaSum(arrString));
 
-// Using map
+// Using map and reduce
 export const commaAdd = (arrString) => {
 	//Code here
 	const arrayOfStrings = arrString.split(",");
@@ -37,3 +37,16 @@ export const commaAdd = (arrString) => {
 };
 
 console.log(commaAdd(arrString));
+
+// Using map and reduce in return
+export const commaSumAdd = (arrString) => {
+	//Code here
+	return arrString
+		.split(",")
+		.map(numString => Number(numString))
+		.reduce((acc, curr) => {
+			return (acc += curr);
+		}, 0)
+};
+
+console.log(commaSumAdd(arrString));
