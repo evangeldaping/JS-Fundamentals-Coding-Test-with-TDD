@@ -11,9 +11,23 @@
 
 const url = "http://localhost:1337/api?firstname=joshua&lastname=chu&age=21";
 
+// Using for loop
 export const urlParser = (url) => {
 	// Code here
-	return 0;
+	const obj = {};
+	const tempVal = url.split("?");
+	console.log(tempVal);
+
+	if (tempVal.length > 1) {
+		const tempVal2 = tempVal[1].split("&");
+		for (let i = 0; i < tempVal2.length; i++) {
+			const val = tempVal2[i].split("=");
+			const key = val[0];
+			const value = val[1]
+			obj[key] = value;
+		}
+	}
+	return obj;
 };
 
 console.log(urlParser(url));
