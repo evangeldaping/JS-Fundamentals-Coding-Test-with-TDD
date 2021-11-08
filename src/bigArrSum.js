@@ -6,9 +6,9 @@
 
 const arr = [1, 2, 2, 3, 1, 4, 3, 5];
 
-export const sumArr = (arr) => {
+// Using for loop
+export const sumArrFor = (arr) => {
 	// Code here
-	// Using for loop
 	let sum = 0;
 	for (var i = 0; i < arr.length; i++) {
 		if (arr[i+1] > arr[i]) {
@@ -18,7 +18,7 @@ export const sumArr = (arr) => {
 	return sum;
 };
 
-console.log(sumArr(arr));
+console.log(sumArrFor(arr));
 
 // first loop
 // variable   			value
@@ -82,3 +82,15 @@ console.log(sumArr(arr));
 // arr[i+1] > arr[i]    5>3 => true
 // sum += arr[i+1]      9+5
 // sum					14
+
+// Using reduce
+export const sumArr = (arr) => {
+	// Code here
+	return arr
+		.reduce((acc, curr, i, newArr) => {		
+			if (newArr[i+1] > newArr[i]) acc += newArr[i+1]
+			return acc;
+		}, 0)
+}
+
+console.log(sumArr(arr));

@@ -1,4 +1,4 @@
-import { searchFunc } from "../search";
+import { searchFunc } from "../src/search";
 
 describe("Searching through an Array and return an Array", () => {
 	const searchArr = ["joShUa", "aJI", "EvaNgel"];

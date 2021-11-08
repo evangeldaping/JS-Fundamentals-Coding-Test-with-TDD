@@ -8,7 +8,7 @@ const sentence =
 	"hello there, i am joshua chu and i need you to capitalize each word's first letter in order to become the best programmer in the world.";
 
 // Using for loop
-export const capitalizeFunc = (sentence) => {
+export const capitalizeFuncFor = (sentence) => {
 	// Code here
 	const words = sentence.split(" ");
 	for (let i = 0; i < words.length; i++) {
@@ -17,12 +17,12 @@ export const capitalizeFunc = (sentence) => {
 	return words.join(" ");
 };
 
-console.log(capitalizeFunc(sentence));
+console.log(capitalizeFuncFor(sentence));
 
 // Using map
-const capitalizedFunc = (sentence) => {
+export const capitalizeFunc = (sentence) => {
 	return sentence
 		.split(' ')
 		.map(words => words.charAt(0).toUpperCase() + words.slice(1)).join(' ');
 }
-console.log(capitalizedFunc(sentence));
+console.log(capitalizeFunc(sentence));

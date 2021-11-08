@@ -6,7 +6,8 @@
 
 const arr = [1, 2, 2, 3, 1, 4, 3, 5]; // 8
 
-export const sumArrDiff = (arr) => {
+// Using for loop
+export const sumArrDiffFor = (arr) => {
 	// Code here
 	let sumDiff = 0;
 	for (var i = 0; i < arr.length; i++) {
@@ -20,7 +21,7 @@ export const sumArrDiff = (arr) => {
 	return sumDiff;
 };
 
-console.log(sumArrDiff(arr));
+console.log(sumArrDiffFor(arr));
 
 // first loop
 // variable   			value
@@ -98,3 +99,16 @@ console.log(sumArrDiff(arr));
 // arr[i+1] <= arr[i]   5 <= 3 => false
 // sumDiff -= arr[i+1]  
 // sumDiff				8
+
+// Using reduce
+export const sumArrDiff = (arr) => {
+	// Code here
+	return arr
+		.reduce((acc, curr, i, newArr) => {
+			if (newArr[i+1] > newArr[i]) acc += newArr[i+1]
+			if (newArr[i+1] <= newArr[i]) acc -= newArr[i+1]
+			return acc;
+		}, 0)
+}
+
+console.log(sumArrDiff(arr));
