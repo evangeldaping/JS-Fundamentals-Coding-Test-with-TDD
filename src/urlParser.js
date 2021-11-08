@@ -12,7 +12,7 @@
 const url = "http://localhost:1337/api?firstname=joshua&lastname=chu&age=21";
 
 // Using for loop
-export const urlParser = (url) => {
+export const urlParserFor = (url) => {
 	// Code here
 	const obj = {};
 	const tempVal = url.split("?");
@@ -30,4 +30,4 @@ export const urlParser = (url) => {
 	return obj;
 };
 
-console.log(urlParser(url));
+console.log(urlParserFor(url));

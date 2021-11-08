@@ -55,4 +55,8 @@ describe("Computes the value of a word in numbers", () => {
 	});
 
 	// Write your own test using your name
+	it("evangel = 66", () => {
+		const result = wordNumValue("evANGel", alphabetMap);
+		expect(result).toBe(66);
+	})
 });

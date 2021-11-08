@@ -2,6 +2,17 @@
 
 // Input:
 // Word : "KnoWlEdGe"
+// k = 11
+// n = 14
+// o = 15
+// w = 23
+// l = 12
+// e = 5
+// d = 4
+// g = 7
+// 3 = 5
+// total = 96
+
 // alphabetMap : alphabetMap
 
 // Output : 96
@@ -35,9 +46,28 @@ const alphabetMap = {
 	z: 26,
 };
 
+// Using for loop
+export const wordNumValueFor = (target, alphabetMap) => {
+	// code here
+	const val = target.toLowerCase();
+	let	sum = 0;
+
+	for (var i = 0; i < val.length; i++) {
+		if (alphabetMap[val[i]]) {
+			sum += alphabetMap[val[i]];
+		}
+	}
+	return sum;
+};
+
+console.log(wordNumValueFor("KnoWlEdGe", alphabetMap));
+
+// Using map and reduce
 export const wordNumValue = (target, alphabetMap) => {
 	// code here
-	return 0;
+	let str = target.toLowerCase();
+	let sum = [...str].map(c => alphabetMap[c] || 0).reduce((a, b) => a + b, 0);
+	return sum;
 };
 
 console.log(wordNumValue("KnoWlEdGe", alphabetMap));
