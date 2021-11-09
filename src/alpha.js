@@ -52,6 +52,8 @@ export const wordNumValueFor = (target, alphabetMap) => {
 	const letter = target.toLowerCase();
 	let	sum = 0;
 
+	// console.log(alphabetMap['k']);
+
 	for (var i = 0; i < letter.length; i++) {
 		const currentLetterVal = alphabetMap[letter[i]];
 		if (currentLetterVal) {
@@ -147,12 +149,18 @@ console.log(wordNumValueFor("KnoWlEdGe", alphabetMap));
 // sum += alphabetMap[letter[i]]     91 += 5
 // return sum                        96
 
-// Using map and reduce
+// Using reduce
 export const wordNumValue = (target, alphabetMap) => {
 	// code here
-	let str = target.toLowerCase();
-	let sum = [...str].map(c => alphabetMap[c] || 0).reduce((a, b) => a + b, 0);
-	return sum;
+	let str = target.toLowerCase().split('');
+	return str
+		.reduce((acc, curr, i) => {
+			const currentLetterVal = alphabetMap[str[i]];
+			if (currentLetterVal) {
+				acc += currentLetterVal;
+			}
+			return acc;
+		}, 0);
 };
 
 console.log(wordNumValue("KnoWlEdGe", alphabetMap));
