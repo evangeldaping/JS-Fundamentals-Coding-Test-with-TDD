@@ -1,4 +1,4 @@
-import { csvToObjParserSorted } from "../csv";
+import { csvToObjParserSorted } from "../src/csv";
 
 describe("Parses a CSV and convert to an array of objects", () => {
 	it("returns an empty array if the csv is empty", () => {
@@ -19,7 +19,7 @@ describe("Parses a CSV and convert to an array of objects", () => {
 		const csv = `name,age\njoshua,21`;
 
 		const result = csvToObjParserSorted(csv);
-
+		console.log("result----------->", result);
 		expect(result).toEqual([{ name: "joshua", age: "21" }]);
 	});
 
@@ -27,7 +27,7 @@ describe("Parses a CSV and convert to an array of objects", () => {
 		const csv = `name,age\njoshua,21\njosh,22`;
 
 		const result = csvToObjParserSorted(csv);
-		console.log("result", result);
+		// console.log("result", result);
 
 		expect(result).toEqual([
 			{ name: "josh", age: "22" },
