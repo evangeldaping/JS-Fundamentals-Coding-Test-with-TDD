@@ -2,6 +2,7 @@
 
 // console.log([1, ...arr, 2, ..."STRUBG"]);
 
+// This learning exercise is for updating the key first with value of aji
 const obj = [
 	{
 		first: "joshua",
