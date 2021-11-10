@@ -26,8 +26,6 @@ export const arrNotFuncFor = (arr1, arr2) => {
 	return uniqueArr;
 };
 
-console.log(arrNotFuncFor(arr1, arr2));
-
 // Using filter
 // https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript
 export const arrNotFunc = (arr1, arr2) => {

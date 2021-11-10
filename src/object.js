@@ -1,7 +1,3 @@
-// const obj = [1, 2, 3];
-
-// console.log([1, ...arr, 2, ..."STRUBG"]);
-
 // This learning exercise is for updating the key first with value of aji
 const obj = [
 	{
@@ -35,17 +31,14 @@ const obj = [
 
 const func = (obj, targetFirstName, targetProp, updatedValue) => {
 	// const targetObj = obj.filter((e) => e.first === targetFirstName)[0];
-
 	const targetObj = obj.find((e) => e.first === targetFirstName);
 	const updatedTargetObj = { ...targetObj, [targetProp]: updatedValue };
 	const newObj = obj.map((e) => {
 		if (e.first === targetFirstName) {
 			return updatedTargetObj;
 		}
-
 		return e;
 	});
-
 	return newObj;
 };
 

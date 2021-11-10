@@ -7,7 +7,7 @@
 const arrString = "1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9";
 
 // Using for loop
-export const commaSum = (arrString) => {
+export const commaSumFor = (arrString) => {
 	//Code here
 	const numStrings = arrString.split(',');
 	const newArrays = [];
@@ -22,10 +22,10 @@ export const commaSum = (arrString) => {
 	return total;
 };
 
-console.log(commaSum(arrString));
+console.log(commaSumFor(arrString));
 
 // Using map and reduce
-export const commaAdd = (arrString) => {
+export const commaSumMapRed = (arrString) => {
 	//Code here
 	const arrayOfStrings = arrString.split(",");
 	const newArrays = arrayOfStrings.map(numString => Number(numString));
@@ -36,10 +36,10 @@ export const commaAdd = (arrString) => {
 	return total;
 };
 
-console.log(commaAdd(arrString));
+console.log(commaSumMapRed(arrString));
 
 // Using map and reduce in return
-export const commaSumAdd = (arrString) => {
+export const commaSum = (arrString) => {
 	//Code here
 	return arrString
 		.split(",")
@@ -49,4 +49,4 @@ export const commaSumAdd = (arrString) => {
 		}, 0)
 };
 
-console.log(commaSumAdd(arrString));
+console.log(commaSum(arrString));
